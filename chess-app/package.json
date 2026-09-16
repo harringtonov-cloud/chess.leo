@@ -12,7 +12,7 @@
     "chess.js": "^1.0.0-beta.8",
     "firebase": "^10.14.1",
     "lucide-react": "^0.460.0",
-    "next": "15.1.6",
+    "next": "^15.2.0",
     "react": "^19",
     "react-chessboard": "^4.7.2",
     "react-dom": "^19",
