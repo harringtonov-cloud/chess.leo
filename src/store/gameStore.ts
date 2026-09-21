@@ -23,7 +23,6 @@ interface GameState {
   capturedPieces: { white: string[]; black: string[] };
   gameResult: string | null;
   
-  // Actions
   setGameMode: (mode: GameMode) => void;
   setAiLevel: (level: number) => void;
   setTimeControl: (control: TimeControl) => void;
@@ -79,14 +78,9 @@ export const useGameStore = create<GameState>((set, get) => ({
     const { chess, timeControl, isWhiteTurn } = get();
     
     try {
-      const move = chess.move({
-        from,
-        to,
-        promotion,
-      });
+      const move = chess.move({ from, to, promotion });
 
       if (move) {
-        // Обновляем захваченные фигуры
         const captured = { ...get().capturedPieces };
         if (move.captured) {
           if (move.color === 'w') {
@@ -96,7 +90,6 @@ export const useGameStore = create<GameState>((set, get) => ({
           }
         }
 
-        // Добавляем время инкремента
         let newWhiteTime = get().whiteTime;
         let newBlackTime = get().blackTime;
         
@@ -108,7 +101,6 @@ export const useGameStore = create<GameState>((set, get) => ({
           }
         }
 
-        // Проверяем окончание игры
         let gameResult = null;
         if (chess.isCheckmate()) {
           gameResult = isWhiteTurn ? 'Белые выиграли' : 'Черные выиграли';
@@ -157,10 +149,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       const moves = chess.moves({ square, verbose: true });
       const possibleSquares = moves.map(m => m.to as Square);
       
-      set({
-        selectedSquare: square,
-        possibleMoves: possibleSquares,
-      });
+      set({ selectedSquare: square, possibleMoves: possibleSquares });
     } else {
       set({ selectedSquare: null, possibleMoves: [] });
     }
@@ -170,18 +159,12 @@ export const useGameStore = create<GameState>((set, get) => ({
     if (isWhite) {
       set({ whiteTime: time });
       if (time <= 0) {
-        set({ 
-          gameResult: 'Черные выиграли (время)',
-          isGameActive: false,
-        });
+        set({ gameResult: 'Черные выиграли (время)', isGameActive: false });
       }
     } else {
       set({ blackTime: time });
       if (time <= 0) {
-        set({ 
-          gameResult: 'Белые выиграли (время)',
-          isGameActive: false,
-        });
+        set({ gameResult: 'Белые выиграли (время)', isGameActive: false });
       }
     }
   },
