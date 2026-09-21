@@ -6,27 +6,16 @@ class SoundManager {
     if (typeof window === 'undefined') return;
     
     this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-    
-    // Генерируем звуки программно
     await this.generateSounds();
   }
 
   private async generateSounds() {
     if (!this.audioContext) return;
 
-    // Звук обычного хода (клик)
     this.sounds.set('move', await this.createClickSound(0.05, 800, 0.1));
-    
-    // Звук взятия (более глубокий)
     this.sounds.set('capture', await this.createClickSound(0.08, 400, 0.15));
-    
-    // Звук шаха (резкий)
     this.sounds.set('check', await this.createBeepSound(0.1, 1200, 0.2));
-    
-    // Звук мата (финальный)
     this.sounds.set('checkmate', await this.createCheckmateSound());
-    
-    // Звук рокировки
     this.sounds.set('castle', await this.createDoubleClickSound());
   }
 
