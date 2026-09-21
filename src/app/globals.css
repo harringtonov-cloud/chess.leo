@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #161512;
+  --bg-secondary: #262421;
+  --bg-tertiary: #2d2b28;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #d8d8d8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
