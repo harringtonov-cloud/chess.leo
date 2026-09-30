@@ -20,7 +20,7 @@ interface GameLobbyProps {
 }
 
 export function GameLobby({ onGameStart }: GameLobbyProps) {
-  const { user, userProfile } = useAuth();
+  const { user, loading } = useAuth();
   const [challenges, setChallenges] = useState<Challenge[]>([]);
   const [myChallenge, setMyChallenge] = useState<Challenge | null>(null);
   const [showCreateForm, setShowCreateForm] = useState(false);
