@@ -41,7 +41,7 @@ export function GameLobby({ onGameStart }: GameLobbyProps) {
   }, [user]);
 
   const handleCreateChallenge = async () => {
-    if (!user || !userProfile) return;
+    if (!user) return;
 
     const challengeId = await createChallenge({
       creatorId: user.uid,
@@ -62,7 +62,7 @@ export function GameLobby({ onGameStart }: GameLobbyProps) {
   };
 
   const handleAcceptChallenge = async (challenge: Challenge) => {
-    if (!user || !userProfile) return;
+    if (!user) return;
 
     await acceptChallenge(challenge.id);
 
