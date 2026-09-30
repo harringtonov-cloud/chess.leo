@@ -45,8 +45,8 @@ export function GameLobby({ onGameStart }: GameLobbyProps) {
 
     const challengeId = await createChallenge({
       creatorId: user.uid,
-      creatorName: userProfile.displayName,
-      creatorRating: userProfile.rating,
+      creatorName: user.displayName || "Player",
+      creatorRating: 1500,
       timeControl: selectedTimeControl,
       rated: true,
       status: 'open',
