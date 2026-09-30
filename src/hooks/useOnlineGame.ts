@@ -11,7 +11,7 @@ import {
 import { Chess } from 'chess.js';
 
 export function useOnlineGame(gameId: string | null) {
-  const { user, userProfile } = useAuth();
+ const { user } = useAuth();
   const [gameData, setGameData] = useState<GameData | null>(null);
   const [chess] = useState(new Chess());
 
