@@ -49,10 +49,10 @@ export function Controls() {
               <button
                 onClick={() => setGameMode('human')}
                 className={`flex-1 px-3 py-2 rounded text-sm ${
-                  gameMode === 'human'
-                    ? bg-gradient-to-r from-emerald-500 to-cyan-500 text-white'
-                    : 'bg-[#3d3a36] hover:bg-[#4d4a46]'
-                }`}
+                gameMode === 'human'
+                ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white'
+                : 'bg-[#3d3a36] hover:bg-[#4d4a46]'
+            }`}
               >
                 Человек vs Человек
               </button>
