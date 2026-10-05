@@ -12,7 +12,7 @@ interface PlayerPanelProps {
 
 export function PlayerPanel({ name, rating, isWhite, capturedPieces, materialAdvantage }: PlayerPanelProps) {
   return (
-    <div className="flex items-center justify-between bg-[#262421] p-3 rounded">
+    <div className="flex items-center justify-between bg-slate-800 border border-slate-700 p-3 rounded">
       <div className="flex items-center gap-3">
         <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
           isWhite ? 'bg-white text-black' : 'bg-gray-800 text-white'
@@ -21,7 +21,7 @@ export function PlayerPanel({ name, rating, isWhite, capturedPieces, materialAdv
         </div>
         <div>
           <div className="font-semibold">{name}</div>
-          <div className="text-sm text-gray-400">{rating}</div>
+          <div className="text-sm text-cyan-300">{rating}</div>
         </div>
       </div>
 
