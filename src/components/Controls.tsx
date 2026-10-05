@@ -50,7 +50,7 @@ export function Controls() {
                 onClick={() => setGameMode('human')}
                 className={`flex-1 px-3 py-2 rounded text-sm ${
                   gameMode === 'human'
-                    ? 'bg-[#759900] text-white'
+                    ? bg-gradient-to-r from-emerald-500 to-cyan-500 text-white'
                     : 'bg-[#3d3a36] hover:bg-[#4d4a46]'
                 }`}
               >
@@ -105,7 +105,7 @@ export function Controls() {
           {/* Начать игру */}
           <button
             onClick={startNewGame}
-            className="w-full flex items-center justify-center gap-2 bg-[#759900] hover:bg-[#618000] text-white px-4 py-3 rounded font-semibold transition-colors"
+            className="w-full flex items-center justify-center gap-2 bg-[#759900] hover:opacity-90 text-white px-4 py-3 rounded font-semibold transition-colors"
           >
             <Play className="w-5 h-5" />
             Начать игру
