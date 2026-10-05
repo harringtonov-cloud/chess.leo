@@ -1,51 +1,66 @@
 'use client';
 
-import { ChessBoardComponent } from '@/components/ChessBoard';
-import { PlayerPanel } from '@/components/PlayerPanel';
-import { Timer } from '@/components/Timer';
-import { Controls } from '@/components/Controls';
-
 export default function Home() {
+  const timeControls = [
+    '1+0',
+    '2+1',
+    '3+0',
+    '3+2',
+    '5+0',
+    '5+3',
+    '10+0',
+    '10+5',
+    '15+10',
+  ];
+
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-white p-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
+    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white">
+      <header className="border-b border-slate-700">
+        <div className="max-w-7xl mx-auto h-16 flex items-center justify-between px-6">
+          <h1 className="text-3xl font-bold text-cyan-400">
+            ♟ ChessUZ
+          </h1>
 
-        <div className="space-y-4">
-          <PlayerPanel
-            name="Black"
-            rating={1500}
-            isWhite={false}
-            capturedPieces={[]}
-            materialAdvantage={0}
-          />
-
-          <Timer
-            isWhite={false}
-            time={600}
-            isActive={false}
-          />
-
-          <ChessBoardComponent />
-
-          <Timer
-            isWhite={true}
-            time={600}
-            isActive={true}
-          />
-
-          <PlayerPanel
-            name="White"
-            rating={1500}
-            isWhite={true}
-            capturedPieces={[]}
-            materialAdvantage={0}
-          />
+          <nav className="flex gap-6 text-slate-300">
+            #Играть</a>
+            #Турниры</a>
+            <aбучение</a>
+            #Рейтинг</a>
+          </nav>
         </div>
+      </header>
 
-        <div>
-          <Controls />
-        </div>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[250px_1fr] gap-6 p-6">
+        <aside className="space-y-3">
+          <button className="w-full p-4 rounded-xl bg-emerald-600 hover:bg-emerald-500">
+            Создать игру
+          </button>
 
+          <button className="w-full p-4 rounded-xl bg-cyan-600 hover:bg-cyan-500">
+            Играть с другом
+          </button>
+
+          <button className="w-full p-4 rounded-xl bg-orange-600 hover:bg-orange-500">
+            Играть с ИИ
+          </button>
+        </aside>
+
+        <section>
+          <h2 className="text-xl mb-4 font-bold">
+            Быстрый старт
+          </h2>
+
+          <div className="grid grid-cols-3 gap-4">
+            {timeControls.map((item) => (
+              <button
+                key={item}
+                className="h-32 rounded-2xl bg-slate-800 hover:bg-slate-700 transition text-4xl font-bold"
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        </section>
       </div>
     </main>
   );
