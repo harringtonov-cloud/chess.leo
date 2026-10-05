@@ -60,8 +60,8 @@ export function Controls() {
                 onClick={() => setGameMode('ai')}
                 className={`flex-1 px-3 py-2 rounded text-sm ${
                   gameMode === 'ai'
-                    ? 'bg-[#759900] text-white'
-                    : 'bg-[#3d3a36] hover:bg-[#4d4a46]'
+                ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white'
+                : 'bg-[#3d3a36] hover:bg-[#4d4a46]'
                 }`}
               >
                 Играть с ИИ
