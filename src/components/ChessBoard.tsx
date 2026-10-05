@@ -1,6 +1,6 @@
 return (
   <div className="flex justify-center">
-    <div className="w-full max-w-[650px]">
+    <div className="w-full max-w-[620px] mx-auto">
       <Chessboard
         position={chess.fen()}
         onSquareClick={onSquareClick}
@@ -8,14 +8,14 @@ return (
         customSquareStyles={customSquareStyles}
         boardOrientation="white"
         customBoardStyle={{
-          borderRadius: '16px',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+          borderRadius: '20px',
+          boxShadow: '0 25px 60px rgba(6,182,212,.25)',
         }}
         customDarkSquareStyle={{
-          backgroundColor: '#B58863',
+          backgroundColor: '#769656',
         }}
         customLightSquareStyle={{
-          backgroundColor: '#F0D9B5',
+          backgroundColor: '#eeeed2',
         }}
         animationDuration={200}
       />
