@@ -18,5 +18,11 @@ export function useAuth() {
   return {
     user,
     loading,
+    userProfile: user
+      ? {
+          displayName: user.displayName || 'Player',
+          rating: 1500,
+        }
+      : null,
   };
 }
